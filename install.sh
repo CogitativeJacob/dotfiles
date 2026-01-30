@@ -23,6 +23,7 @@ echo "== Installing language servers =="
 npm install -g \
   yaml-language-server \
   bash-language-server \
+  ansible-language-server
   pyright
 
 

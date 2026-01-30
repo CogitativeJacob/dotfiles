@@ -1,0 +1,19 @@
+{
+  "pyright.disableLanguageServices": false,
+  "pyright.disableOrganizeImports": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnknownVariableType": "none",
+    "reportUnknownMemberType": "none",
+    "reportUnknownArgumentType": "none",
+    "reportUnknownParameterType": "none"
+  },
+  "languageserver": {
+    "ansible": {
+      "command": "ansible-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["yaml.ansible"]
+    }
+  }
+}
+

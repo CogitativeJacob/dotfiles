@@ -24,6 +24,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 
@@ -54,4 +58,18 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Make Coc inlay hints readable (adjust if needed)
+highlight CocInlayHint ctermfg=244 ctermbg=NONE guifg=#808080 guibg=NONE
+highlight CocHintSign ctermfg=244 ctermbg=NONE guifg=#808080 guibg=NONE
+" Make Coc hover (floating window) less blinding
+highlight CocFloating ctermbg=235 guibg=#1c1c1c
+highlight CocFloatThumb ctermbg=NONE
+highlight CocFloatSbar ctermbg=NONE
+highlight CocFloatDividingLine ctermbg=NONE
+
+augroup ansible_ft_names
+  autocmd!
+  autocmd BufRead,BufNewFile *.playbook.yml,*.playbook.yaml setfiletype yaml.ansible
+augroup END
 
